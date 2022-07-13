@@ -4,7 +4,8 @@
 
 ## Updates
 - 07/04/2022: VL-CheckList paper on arxiv https://arxiv.org/abs/2207.00221
-- 07/04/2022: the code is under review. Please stay tuned.
+- 07/12/2022: Updated object, relation, attribute splits/dataset
+- 07/12/2022: the code is under review. Please stay tuned.
 
 ## Introduction
 This repository is the official project page for (VL-CheckList). 
