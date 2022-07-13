@@ -1,0 +1,3 @@
+ANNO_PATH: "vl-checklist/data/Object/Location/swig_location/swig_agent/swig_agent_center.json"
+IMG_ROOT: "swig/"
+TYPE: "TUPLE_JSON"

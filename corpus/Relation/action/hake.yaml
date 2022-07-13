@@ -1,0 +1,3 @@
+ANNO_PATH: "vl-checklist/data/Relation/hake_action.json"
+IMG_ROOT: "hake/"
+TYPE: "TUPLE_JSON"

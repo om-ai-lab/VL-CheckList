@@ -1,0 +1,3 @@
+ANNO_PATH: "vl-checklist/data/Object/Size/vg_size/vg_obj_large.json"
+IMG_ROOT: "vg/"
+TYPE: "TUPLE_JSON"

@@ -1,0 +1,3 @@
+ANNO_PATH: "vl-checklist/data/Relation/swig_action.json"
+IMG_ROOT: "swig/"
+TYPE: "TUPLE_JSON"
