@@ -6,6 +6,8 @@ import json
 class DataLoader(object):
     def __init__(self, corpus_names, type ,task='itm', version="v1") -> None:
         self.root_dir = os.path.dirname(os.path.realpath(__file__))#.replace("/vl_checklist", "")
+        self.cur_dir = os.path.realpath(os.curdir)
+
         self.version = version
         if task == 'itm':
             self.data = self.load_pos_and_neg_samples(corpus_names,type)
@@ -17,7 +19,7 @@ class DataLoader(object):
         corpus = {}
         for corpus_name in corpus_names:
             corpus[corpus_name] = []
-            config = yaml.load(open(os.path.join(self.root_dir, 'corpus',  self.version, type, f'{corpus_name}.yaml'), 'r'), Loader=yaml.FullLoader)
+            config = yaml.load(open(os.path.join(self.cur_dir, 'corpus',  self.version, type, f'{corpus_name}.yaml'), 'r'), Loader=yaml.FullLoader)
             print(config["ANNO_PATH"])
             m = json.load(open(config["ANNO_PATH"]))
             for x in m:
@@ -40,8 +42,8 @@ class DataLoader(object):
         corpus = {}
         for corpus_name in corpus_names:
             corpus[corpus_name] = []
-            config = yaml.load(open(os.path.join(self.root_dir, 'corpus',  self.version, type,f'{corpus_name}.yaml'), 'r'), Loader=yaml.FullLoader)
-            m = json.load(open(os.path.join(self.root_dir,"../",config["ANNO_PATH"])))
+            config = yaml.load(open(os.path.join(self.cur_dir, 'corpus',  self.version, type,f'{corpus_name}.yaml'), 'r'), Loader=yaml.FullLoader)
+            m = json.load(open(os.path.join(self.cur_dir,config["ANNO_PATH"])))
             for x in m:
                 path, texts_dict = x
                 path = os.path.join(config["IMG_ROOT"], path)

@@ -4,7 +4,6 @@ from tqdm import tqdm
 import yaml
 import os 
 import random
-from PIL import Image
 import time
 import json
 
@@ -24,18 +23,14 @@ class Evaluate(object):
         self.sample_num = m["OUTPUT"]["NUM"]
         self.model_name = model.model_name()
    
-    def start(self, version="v1"):
-        for data_type in self.types:
-            for data_name in self.data_names:
-                self.eval(data_type, data_name, version)
+    def start(self):
+        for data_type in self.types:            
+            self.eval(data_type=data_type)
 
-    def eval(self, data_type, data_name, version="v1"):
+    def eval(self, data_type):
         max_number = self.max_num
         d = DataLoader(self.data_names, data_type, self.task)
-        config = yaml.load(open(os.path.join(self.root_dir, 'corpus', version, data_type,f'{data_name}.yaml'), 'r'), Loader=yaml.FullLoader)
-        img_root = config['IMG_ROOT']+"\\"
         results = {}
-        save_dict = {}
         index = 0
         if self.task == 'itm':
             for name in d.data:
@@ -126,7 +121,6 @@ class Evaluate(object):
                             sample_false.append({"img_path":images[i],"pos_score":round(result_tmp[i][0][1],4),"pos_txt":texts_pos[i],"neg_score":round(result_tmp[i][1][1],4),"neg_txt":texts_neg[i],"result":"incorrect"})
                             num_f += 1
                 endtime = time.time()
-                print(num_t, num_f)
                 accuracy = float(num_t) / (num_t + num_f)
                 results[name] = f'acc: {round(accuracy, 4)}'
                 file_name = data_type.replace("/","_")
@@ -134,8 +128,6 @@ class Evaluate(object):
                 sample_f = random.sample(sample_false,self.sample_num)
 
                 sample_path = os.path.join(self.cur_dir, self.dir,'itc',"sample",f'{file_name}_{name}')
-                print (sample_path)
-                exit()
                 if not os.path.exists(sample_path):
                     os.makedirs(sample_path)
                 with open(os.path.join(self.cur_dir, self.dir,'itc',f'{file_name}_{name}.json'),'w',encoding='utf-8') as f:

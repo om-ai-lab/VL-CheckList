@@ -8,7 +8,7 @@ setuptools.setup(
     name="vl_checklist",
     packages = find_packages(),
     #packages = ["om_vlp"],
-    package_data={'vl_checklist': ['corpus']},
+    package_data={'vl_checklist': ['*.yaml']},
     include_package_data=True,
     version="0.0.1",
     author="kyusonglee",
