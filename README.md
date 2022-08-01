@@ -5,7 +5,7 @@
 ## Updates
 - 07/04/2022: VL-CheckList paper on arxiv https://arxiv.org/abs/2207.00221
 - 07/12/2022: Updated object, relation, attribute splits/dataset
-- 08/01/2022: Release the initial codes 
+- 08/01/2022: Release the initial code and an example model
 
 ## Introduction
 This repository is the official project page for (VL-CheckList). 
@@ -29,7 +29,7 @@ git clone https://github.com/om-ai-lab/VL-CheckList.git
 ## How to Evaluate your Model
 We put the example models in the `example_models/` folder.  
 **1.** Define a config file 
-e.g. in configs/sample.yaml [Link](./configs/sample.yaml)
+e.g. in [configs/sample.yam](./configs/sample.yaml)
 ```
 MAX_NUM: 2000
 MODEL_NAME: "ViLT"
