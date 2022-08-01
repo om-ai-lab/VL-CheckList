@@ -50,6 +50,7 @@ OUTPUT:
 We provide the initial curated jsons at `data/` and corresponding yamls at `vl_checklist/corpus`. You can need to download image dataset. You can find the instruction in detail [Link](DATASETS.md)
 
 **3.** Load the model which contain `predict()` and Evaluate class as follows.  Please find an example model class [Link](./example_models/vilt/engine.py)
+
 **4.** Run `start()` as follows
 
 Here is an example code
