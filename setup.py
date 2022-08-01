@@ -6,9 +6,9 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="vl_checklist",
-    packages = find_packages(),
-    #packages = ["om_vlp"],
-    package_data={'vl_checklist': ['*.yaml']},
+    packages = find_packages(exclude=["example_models","example_models.*"]),
+    #packages = ["vl_checklist"],
+    package_data={'vl_checklist': ['*.ttf']},
     include_package_data=True,
     version="0.0.1",
     author="kyusonglee",
@@ -23,7 +23,7 @@ setuptools.setup(
     ],
     install_requires = [
         "tqdm",
-        "Image",
         "pyyaml"
+        "Pillow==9.0.0"
     ]
 )

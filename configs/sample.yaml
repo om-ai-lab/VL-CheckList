@@ -1,10 +1,10 @@
 MAX_NUM: 2000
 BATCH_SIZE: 4
-MODE_NAME: "ViLT"
+MODE_NAME: "ALBEF"
 TASK: "itc"
 DATA:
   TYPES: ["Attribute/color"]
   TEST_DATA: ["vg"]   
 OUTPUT: 
-  DIR: "output/vilt"
+  DIR: "output/albef"
   NUM: 5

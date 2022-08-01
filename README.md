@@ -27,7 +27,7 @@ git clone https://github.com/om-ai-lab/VL-CheckList.git
 ```
 
 ## How to Evaluate your Model
-We put the example models in the `example_models/` folder.  
+We put the example models in the `example_models/` folder. 
 **1.** Define a config file 
 e.g. in [configs/sample.yam](./configs/sample.yaml)
 ```
@@ -62,7 +62,7 @@ if __name__ == '__main__':
  You can check the output format [LINK](OUTPUT.md)
 
 ## Download Pretrained Weights
-We include examples models at `example_models/`. You can download the pretrained weights we used in our papers as follows:
+We include examples models at `example_models/`. You can download the pretrained weights at `resources/` folder to test our example models:
 - [ViLT-B/32](https://github.com/dandelin/ViLT/releases/download/200k/vilt_200k_mlm_itm.ckpt)
 - [ALBEF](https://storage.googleapis.com/sfr-pcl-data-research/ALBEF/ALBEF.pth)
 - [TCL](https://drive.google.com/file/d/1Cb1azBdcdbm0pRMFs-tupKxILTCXlB4O/view)
