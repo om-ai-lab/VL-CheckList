@@ -1,0 +1,3 @@
+ANNO_PATH: "data/Attribute/vg/size.json"
+IMG_ROOT: "vg/"
+TYPE: "TUPLE_JSON"

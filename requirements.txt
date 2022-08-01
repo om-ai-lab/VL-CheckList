@@ -1,0 +1,7 @@
+pytorch_lightning==1.1.4
+Pillow==8.2.0
+Image
+tqdm==4.56.0
+numpy==1.19.5
+matplotlib
+torchmetrics
