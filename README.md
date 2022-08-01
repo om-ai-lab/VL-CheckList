@@ -45,7 +45,7 @@ OUTPUT:
 We provide the initial curated jsons at `data/` and corresponding yamls at `vl_checklist/corpus`. You can need to download image dataset. You can find the instruction in detail [Link](DATASETS.md)
 
 **3.** Load the model which contain `predict()` and Evaluate class as follows.  
-**4.** Run `start()` and check the results in the OUTDIR DIR you defined the yaml file
+**4.** Run `start()` as follows
 
 Here is an example code
 ```python
@@ -57,6 +57,9 @@ if __name__ == '__main__':
     vilt_eval = Evaluate(config="configs/sample.yaml", model=model)
     vilt_eval.start()
 ```    
+
+ **5.**  check the results in the OUTDIR DIR you defined the yaml file
+ You can check the output format [LINK](OUTPUT.md)
 
 ## Download Pretrained Weights
 We include examples models at `example_models/`. You can download the pretrained weights we used in our papers as follows:
