@@ -1,0 +1,3 @@
+ANNO_PATH: "data/Object/Location/vg_location/vg_obj_mid.json"
+IMG_ROOT: "vg/"
+TYPE: "TUPLE_JSON"
