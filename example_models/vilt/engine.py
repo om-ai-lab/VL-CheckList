@@ -31,7 +31,7 @@ class ViLT(VLPModel):
     def model_name(self):
         return self.model_id
 
-    def _load_model(self, model_id):
+    def load_model(self, model_id):
         if model_id is None:
             raise Exception("Model ID cannot be None.")
 
@@ -47,7 +47,8 @@ class ViLT(VLPModel):
 
         return self._models.get(model_id)
 
-    def _load_data(self, src_type, data):
+
+    def load_data(self, src_type, data):
         def transform(x):
             img = x.resize((384, 384))
             img = pixelbert_transform(size=384)(img)
@@ -83,13 +84,13 @@ class ViLT(VLPModel):
         if not len(texts) == len(image_paths):
             raise Exception("# of texts and # of images should be matched")
 
-        model, tokenizer = self._load_model(self.model_id)
+        model, tokenizer = self.load_model(self.model_id)
         # process images by batch
         probs = []
         logits = []
 
         for chunk_i, chunk_t in zip(chunks(image_paths, self.batch_size), chunks(texts, self.batch_size)):
-            image_data = self._load_data(src_type, chunk_i)
+            image_data = self.load_data(src_type, chunk_i)
 
             batch_images = []  # (num_image x num_text)
             batch_text = []

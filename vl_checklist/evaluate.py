@@ -23,11 +23,11 @@ class Evaluate(object):
         self.dir = m["OUTPUT"]["DIR"]
         self.sample_num = m["OUTPUT"]["NUM"]
         self.model_name = model.model_name()
-    
+   
     def start(self, version="v1"):
         for data_type in self.types:
             for data_name in self.data_names:
-                self.eval(data_type, data_name,version)
+                self.eval(data_type, data_name, version)
 
     def eval(self, data_type, data_name, version="v1"):
         max_number = self.max_num
@@ -80,14 +80,14 @@ class Evaluate(object):
                 results[
                     name] = f"precision: {round(precision, 4)}, recall: {round(recall, 4)}, f1: {round(f1, 4)}, acc: {round(accuracy, 4)}"
                 
-                file_name = self.type.replace("/","_")
+                file_name = data_type.replace("/","_")
                 sample_t = random.sample(sample_true,self.sample_num)
                 sample_f = random.sample(sample_false,self.sample_num)
 
-                sample_path = os.path.join(self.root_dir, self.dir,'itm',"sample",f'{file_name}_{name}')
+                sample_path = os.path.join(self.cur_dir, self.dir,'itm',"sample",f'{file_name}_{name}')
                 if not os.path.exists(sample_path):
                     os.makedirs(sample_path)
-                with open(os.path.join(self.root_dir, self.dir,'itm',f'{file_name}_{name}.json'),'w',encoding='utf-8') as f:
+                with open(os.path.join(self.cur_dir, self.dir,'itm',f'{file_name}_{name}.json'),'w',encoding='utf-8') as f:
                     json.dump({"sample_correct_outputs":sample_t,"sample_incorrect_outputs":sample_f,"total_acc":round(accuracy, 4),"number_of_data":len(d.data[name]),"model_name":self.model_name,"task":self.task,"eval_time":endtime - starttime},f)
                 
                 for n,i in enumerate(zip(sample_t,sample_f)):
@@ -133,10 +133,12 @@ class Evaluate(object):
                 sample_t = random.sample(sample_true,self.sample_num)
                 sample_f = random.sample(sample_false,self.sample_num)
 
-                sample_path = os.path.join(self.root_dir, self.dir,'itc',"sample",f'{file_name}_{name}')
+                sample_path = os.path.join(self.cur_dir, self.dir,'itc',"sample",f'{file_name}_{name}')
+                print (sample_path)
+                exit()
                 if not os.path.exists(sample_path):
                     os.makedirs(sample_path)
-                with open(os.path.join(self.root_dir, self.dir,'itc',f'{file_name}_{name}.json'),'w',encoding='utf-8') as f:
+                with open(os.path.join(self.cur_dir, self.dir,'itc',f'{file_name}_{name}.json'),'w',encoding='utf-8') as f:
                     json.dump({"sample_correct_outputs":sample_t,"sample_incorrect_outputs":sample_f,"total_acc":round(accuracy, 4),"number_of_data":len(d.data[name]),"model_name":self.model_name,"task":self.task,"eval_time":endtime - starttime},f)
                 
                 for n,i in enumerate(zip(sample_t,sample_f)):
