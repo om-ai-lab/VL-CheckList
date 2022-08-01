@@ -1,0 +1,3 @@
+ANNO_PATH: "data/Object/Size/vg_size/vg_obj_small.json"
+IMG_ROOT: "vg/"
+TYPE: "TUPLE_JSON"
