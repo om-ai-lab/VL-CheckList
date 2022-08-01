@@ -1,4 +1,4 @@
-# VL-CheckList (Coming Soon)
+# VL-CheckList 
 
 <img src="docs/overview.png" width="800"> 
 
@@ -17,17 +17,22 @@ The core principle of VL-CheckList are: (1) evaluate a VLP model's fundamental c
 VL-CheckList evaluates VLP models from three aspects: Object, Attribute and Relationship. We provide the performance quantitative table and the radar chart based on the three aspects.
 
 ## How to Install VL-CheckList
-There are two options to use VL-CheckList. First, you can install vl_checklist in your project and import vl_checklist and evaluate your models
+You can install vl_checklist in your project and import vl_checklist and evaluate your models:
 ```
 pip install vl_checklist
 ```
-Second, you can clone the project add your model engine which include 'predict' function. Please find an example engine [Link](./example_models/vilt/engine.py)
+`vilt_test.py` is an example code to show how to import vl_checklist in your project. 
+
+You need to copy `data/` and `corpus/` folders to the root of your project and prepare image datasets [Link](DATASETS.md). 
+
+You can also clone this project add your model as follows. 
 ```
 git clone https://github.com/om-ai-lab/VL-CheckList.git
 ```
 
-## How to Evaluate your Model
-We put the example models in the `example_models/` folder. 
+## Detailed Guidelines How to Evaluate your Model
+We include several representative example VLP models in the `example_models/` folder. 
+
 **1.** Define a config file 
 e.g. in [configs/sample.yam](./configs/sample.yaml)
 ```
@@ -44,7 +49,7 @@ OUTPUT:
 **2.** Prepare Evaluation Data
 We provide the initial curated jsons at `data/` and corresponding yamls at `vl_checklist/corpus`. You can need to download image dataset. You can find the instruction in detail [Link](DATASETS.md)
 
-**3.** Load the model which contain `predict()` and Evaluate class as follows.  
+**3.** Load the model which contain `predict()` and Evaluate class as follows.  Please find an example model class [Link](./example_models/vilt/engine.py)
 **4.** Run `start()` as follows
 
 Here is an example code
@@ -58,8 +63,8 @@ if __name__ == '__main__':
     vilt_eval.start()
 ```    
 
- **5.**  check the results in the OUTDIR DIR you defined the yaml file
- You can check the output format [LINK](OUTPUT.md)
+**5.**  check the results in the OUTDIR DIR you defined the yaml file
+You can check the output format [LINK](OUTPUT.md)
 
 ## Download Pretrained Weights
 We include examples models at `example_models/`. You can download the pretrained weights at `resources/` folder to test our example models:
