@@ -1,0 +1,65 @@
+{
+    "large":{
+        "vg":["Object_Size_large_vg_obj","Object_Size_large_vg_subj"],
+        "swig":["Object_Size_large_swig_agent","Object_Size_large_swig_destination","Object_Size_large_swig_item","Object_Size_large_swig_tool"],
+        "hake":["Object_Size_large_hake"]
+    },
+
+    "medium":{
+        "vg":["Object_Size_medium_vg_obj","Object_Size_medium_vg_subj"],
+        "swig":["Object_Size_medium_swig_agent","Object_Size_medium_swig_destination","Object_Size_medium_swig_item","Object_Size_medium_swig_tool"],
+        "hake":["Object_Size_medium_hake"]    
+    },
+
+    "small":{
+        "vg":["Object_Size_small_vg_obj","Object_Size_small_vg_subj"],
+        "swig":["Object_Size_small_swig_agent","Object_Size_small_swig_destination","Object_Size_small_swig_item","Object_Size_small_swig_tool"],
+        "hake":["Object_Size_small_hake"]    
+    },
+
+    "center":{
+        "vg":["Object_Location_center_vg_obj","Object_Location_center_vg_subj"],
+        "swig":["Object_Location_center_swig_agent","Object_Location_center_swig_destination","Object_Location_center_swig_item","Object_Location_center_swig_tool"],
+        "hake":["Object_Location_center_hake"]
+    },
+    "mid":{
+        "vg":["Object_Location_mid_vg_obj","Object_Location_mid_vg_subj"],
+        "swig":["Object_Location_mid_swig_agent","Object_Location_mid_swig_destination","Object_Location_mid_swig_item","Object_Location_mid_swig_tool"],
+        "hake":["Object_Location_mid_hake"]
+    },
+    "margin":{
+        "vg":["Object_Location_margin_vg_obj","Object_Location_margin_vg_subj"],
+        "swig":["Object_Location_margin_swig_agent","Object_Location_margin_swig_destination","Object_Location_margin_swig_item","Object_Location_margin_swig_tool"],
+        "hake":["Object_Location_margin_hake"]
+    },
+
+    "color":{
+        "vg":["Attribute_color_vg"],
+        "vaw":["Attribute_color_vaw"]
+    },
+    "material":{
+        "vg":["Attribute_material_vg"],
+        "vaw":["Attribute_material_vaw"]
+    },
+    "action_a":{
+        "vg":["Attribute_action_vg"],
+        "vaw":["Attribute_action_vaw"]
+    },
+    "size":{
+        "vg":["Attribute_size_vg"],
+        "vaw":["Attribute_size_vaw"]
+    },
+    "state":{
+        "vg":["Attribute_state_vg"],
+        "vaw":["Attribute_state_vaw"]
+    },
+
+    "action_r":{
+        "vg":["Relation_action_vg"],
+        "swig":["Relation_action_swig"],
+        "hake":["Relation_action_hake"]
+    },
+    "spatial":{
+        "vg":["Relation_spatial_vg"]
+    }
+}
