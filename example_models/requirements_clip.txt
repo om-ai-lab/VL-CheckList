@@ -1,0 +1,7 @@
+git+https://github.com/openai/CLIP.git
+timm==0.6.7
+torch==1.12.0
+torchvision==0.13.0
+tqdm==4.64.0
+ftfy
+regex
