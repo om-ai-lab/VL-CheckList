@@ -34,7 +34,7 @@ git clone https://github.com/om-ai-lab/VL-CheckList.git
 We include several representative example VLP models in the `example_models/` folder. 
 
 **1.** Define a config file 
-e.g. in [configs/sample.yam](./configs/sample.yaml)
+e.g. in [configs/sample.yaml](./configs/sample.yaml)
 ```
 MAX_NUM: 2000
 MODEL_NAME: "ViLT"

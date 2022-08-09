@@ -7,6 +7,7 @@ def chunks(l: Sequence, n: int = 5) -> Generator[Sequence, None, None]:
     for i in range(0, len(l), n):
         yield l[i:i + n]
 
+
 class LRUCache:
     # initialising capacity
     def __init__(self, capacity: int):
