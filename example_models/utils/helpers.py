@@ -8,21 +8,6 @@ def chunks(l: Sequence, n: int = 5) -> Generator[Sequence, None, None]:
         yield l[i:i + n]
 
 
-def has_number(sent:str) -> bool:
-    """
-    Wheter a sentence contains any number information or not
-    (e.g., there is a boy -> True, there are 2 boys -> True, there are boys -> False)
-    """
-    return 
-
-def has_color(sent:str) -> bool:
-    """
-    Wheter a sentence contains any color information or not
-    (e.g., a person is wearing a blue helmet -> True, a person is wearing a helmet -> False)
-    """
-    return 
-
-
 class LRUCache:
     # initialising capacity
     def __init__(self, capacity: int):
