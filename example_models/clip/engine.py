@@ -3,10 +3,11 @@ from vl_checklist.vlp_model import VLPModel
 from example_models.utils.helpers import LRUCache, chunks
 import torch.cuda
 import clip
+from typing import List
 from PIL import Image
 
 class CLIP(VLPModel):
-    root_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../")
+    root_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../")
     MAX_CACHE = 20
 
     def __init__(self,model_id):
@@ -31,13 +32,12 @@ class CLIP(VLPModel):
     def _load_data(self, src_type, data):
         pass
 
-    def predict(self, model_id,
-                images: list,
-                texts: list,
+    def predict(self,images: List[str],
+                texts: List[str],
                 src_type: str = 'local'
                 ):
 
-        model_list = self._load_model(model_id)
+        model_list = self._load_model(self.model_id)
         model = model_list[0]
         preprocess = model_list[1]
         # process images by batch
