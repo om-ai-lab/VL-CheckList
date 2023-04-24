@@ -22,7 +22,7 @@ class CLIP(VLPModel):
     def _load_model(self, model_id):
         if model_id is None:
             raise Exception("Model ID cannot be None.")
-    
+        print("Loading model: {}".format(model_id))
         if not self._models.has(model_id):
             model, preprocess = clip.load(model_id, device=self.device)
             self._models.put(model_id, [model, preprocess])
@@ -31,13 +31,13 @@ class CLIP(VLPModel):
     def _load_data(self, src_type, data):
         pass
 
-    def predict(self, model_id,
+    def predict(self,
                 images: list,
                 texts: list,
                 src_type: str = 'local'
                 ):
 
-        model_list = self._load_model(model_id)
+        model_list = self._load_model(self.model_id)
         model = model_list[0]
         preprocess = model_list[1]
         # process images by batch
