@@ -8,9 +8,11 @@
 # How to get FILE_ID? Click "get sharable link", then you can find it in the end.
 
 import requests
+import os
+import urllib.request
+import zipfile
 
-
-def download_file_from_google_drive(id, destination):
+def download_file_from_google_drive_old(file_id, destination):
     def get_confirm_token(response):
         for key, value in response.cookies.items():
             if key.startswith('download_warning'):
@@ -25,24 +27,29 @@ def download_file_from_google_drive(id, destination):
             for chunk in response.iter_content(CHUNK_SIZE):
                 if chunk: # filter out keep-alive new chunks
                     f.write(chunk)
+        print(f"Downloaded {destination}.")
 
-    URL = "https://docs.google.com/uc?export=download"
-# https://docs.google.com/uc?export=download
+    URL = f"https://drive.google.com/u/0/uc?id={file_id}&export=download"
     session = requests.Session()
 
-    response = session.get(URL, params = { 'id' : id }, stream = True)
+    response = session.get(URL, params={'id': file_id}, stream=True)
     token = get_confirm_token(response)
 
     if token:
-        params = { 'id' : id, 'confirm' : token }
+        params = { 'id' : file_id, 'confirm' : token }
         response = session.get(URL, params = params, stream = True)
-    #print(response)
+    print(response)
     save_response_content(response, destination)
 
 
+def download_file_from_google_drive(file_id, file_path):
+    import gdown
+    url = f'https://drive.google.com/uc?id={file_id}'
+    gdown.download(url, file_path, quiet=False)
+
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) is not 3:
+    if len(sys.argv) != 3:
         print("Usage: python google_drive.py drive_file_id destination_file_path")
     else:
         # TAKE ID FROM SHAREABLE LINK

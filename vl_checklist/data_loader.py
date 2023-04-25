@@ -2,6 +2,7 @@ import yaml
 import os
 import json
 
+IMG_DIR = "/network/projects/aishwarya_lab/datasets/"
 
 class DataLoader(object):
     def __init__(self, corpus_names, type ,task='itm', version="v1") -> None:
@@ -24,7 +25,7 @@ class DataLoader(object):
             m = json.load(open(config["ANNO_PATH"]))
             for x in m:
                 path, texts_dict = x
-                path = os.path.join(config["IMG_ROOT"], path)
+                path = os.path.join(IMG_DIR, config["IMG_ROOT"], path)
                 if os.path.exists(path):
                     corpus[corpus_name].append({
                         "path": path,
@@ -46,7 +47,7 @@ class DataLoader(object):
             m = json.load(open(os.path.join(self.cur_dir,config["ANNO_PATH"])))
             for x in m:
                 path, texts_dict = x
-                path = os.path.join(config["IMG_ROOT"], path)
+                path = os.path.join(IMG_DIR, config["IMG_ROOT"], path)
                 if os.path.exists(path):
                     corpus[corpus_name].append({
                         "path": path,

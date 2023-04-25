@@ -64,7 +64,12 @@ class OpenCLIP(VLPModel):
         probs = []
         for i, chunk_i in enumerate(chunks(images, self.batch_size)):
             for j in range(len(chunk_i)):
-                image = self.preprocess(Image.open(chunk_i[j])).unsqueeze(0).to(self.device)
+                try:
+                    image = self.preprocess(Image.open(chunk_i[j])).unsqueeze(0).to(self.device)
+                except Exception as e:
+                    print(e)
+                    continue
+                
                 # text format is [["there is a cat","there is a dog"],[...,...]...]
                 tokenizer=get_tokenizer("ViT-B-32")
                 text = tokenizer(texts[j]).to(self.device)
@@ -78,6 +83,7 @@ class OpenCLIP(VLPModel):
                     logits_per_image = image_features @ text_features.T
                     prob = logits_per_image.item()
                     probs.append(prob)
+    
         return {"probs":probs}
         
 

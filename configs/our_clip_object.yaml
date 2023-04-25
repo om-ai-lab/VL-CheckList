@@ -1,0 +1,10 @@
+MAX_NUM: 2000
+BATCH_SIZE: 32
+MODE_NAME: "OpenCLIP"
+TASK: "itc"
+DATA:
+  TYPES: ["Object/Location/center", "Object/Location/margin", "Object/Location/mid", "Object/Size/large", "Object/Size/medium", "Object/Size/small"]
+  TEST_DATA: ["hake", "swig_agent", "swig_destination", "swig_item", "swig_tool", "vg_obj", "vg_subj"]   
+OUTPUT: 
+  DIR: "output/our_clip"
+  NUM: 5

@@ -1,0 +1,10 @@
+MAX_NUM: 2000
+BATCH_SIZE: 32
+MODE_NAME: "OpenCLIP"
+TASK: "itc"
+DATA:
+  TYPES: ["Attribute/color", "Attribute/action", "Attribute/material", "Attribute/size", "Attribute/state"]
+  TEST_DATA: ["vg", "vaw"]   
+OUTPUT: 
+  DIR: "output/our_clip"
+  NUM: 5

@@ -1,0 +1,10 @@
+MAX_NUM: 2000
+BATCH_SIZE: 32
+MODE_NAME: "OpenCLIP"
+TASK: "itc"
+DATA:
+  TYPES: ["Relation/action", "Relation/spatial"]
+  TEST_DATA: ["hake", "swig", "vg"]   
+OUTPUT: 
+  DIR: "output/our_clip"
+  NUM: 5

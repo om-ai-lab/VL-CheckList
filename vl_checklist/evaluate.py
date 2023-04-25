@@ -26,8 +26,8 @@ class Evaluate(object):
         self.model_name = model.model_name()
 
     def start(self):
+        print(f"Configs: model = {self.model_name} | task = {self.task}  | datasets = {self.data_names}")
         for data_type in self.types:
-            print(f"Evaluating {data_type} data")
             self.eval(data_type=data_type)
 
     def eval(self, data_type):
@@ -166,6 +166,7 @@ class Evaluate(object):
 
         elif self.task == "itc":
             for name in d.data:
+                print(f"Evaluating {name}/{data_type} data")
                 sample_true = []
                 sample_false = []
                 num_t, num_f = 0, 0
