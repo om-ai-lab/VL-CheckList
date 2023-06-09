@@ -1,3 +1,3 @@
-ANNO_PATH: "data/Attribute/vg/spatial.json"
+ANNO_PATH: "data/Relation/vg/spatial.json"
 IMG_ROOT: "vg/"
 TYPE: "TUPLE_JSON"
