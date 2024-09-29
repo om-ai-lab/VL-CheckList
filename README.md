@@ -95,3 +95,13 @@ If you use any source codes or datasets included in this toolkit in your work, p
   copyright = {Creative Commons Attribution 4.0 International}
 }
 ```
+
+```
+@inproceedings{zhao2022explainable,
+  title={An explainable toolbox for evaluating pre-trained vision-language models},
+  author={Zhao, Tiancheng and Zhang, Tianqi and Zhu, Mingwei and Shen, Haozhan and Lee, Kyusong and Lu, Xiaopeng and Yin, Jianwei},
+  booktitle={Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: System Demonstrations},
+  pages={30--37},
+  year={2022}
+}
+```
