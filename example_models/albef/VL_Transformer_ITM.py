@@ -5,7 +5,7 @@ from example_models.albef.models.xbert import BertConfig, BertModel
 import torch
 from torch import nn
 from torchvision import transforms
-
+ 
 class VL_Transformer_ITM(nn.Module):
     def __init__(self,                 
                  text_encoder = None,
